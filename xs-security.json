@@ -1,0 +1,38 @@
+{
+  "xsappname": "mcp-server",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.mcp",
+      "description": "Access MCP Server tools"
+    }
+  ],
+  "attributes": [],
+  "role-templates": [
+    {
+      "name": "MCPUser",
+      "description": "Can access MCP Server tools",
+      "scope-references": [
+        "$XSAPPNAME.mcp"
+      ],
+      "attribute-references": []
+    }
+  ],
+  "role-collections": [
+    {
+      "name": "MCP Server Users",
+      "description": "Users who can access the MCP Server",
+      "role-template-references": [
+        "$XSAPPNAME.MCPUser"
+      ]
+    }
+  ],
+  "oauth2-configuration": {
+    "redirect-uris": [
+      "https://mcp-server-new.cfapps.us10-001.hana.ondemand.com/oauth/callback"
+    ],
+    "token-validity": 43200,
+    "refresh-token-validity": 2592000,
+    "autoapprove": true
+  }
+}

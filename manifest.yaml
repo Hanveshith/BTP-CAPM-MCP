@@ -1,0 +1,19 @@
+---
+applications:
+  - name: mcp-server
+    memory: 256M
+    disk_quota: 512M
+    instances: 1
+    buildpacks:
+      - nodejs_buildpack
+    command: node server.js
+    health-check-type: http
+    health-check-http-endpoint: /health
+    routes:
+      - route: mcp-server-new.cfapps.us10-001.hana.ondemand.com
+    env:
+      NODE_ENV: production
+      APP_URL: https://mcp-server-new.cfapps.us10-001.hana.ondemand.com
+      NODE_TLS_REJECT_UNAUTHORIZED: "1"
+    services:
+      - mcp-xsuaa
