@@ -11,6 +11,10 @@ const queryEntityTool =
   require('../../tools/static/queryEntityTool');
 const createEntityRecordTool =
   require('../../tools/static/createEntityRecordTool');
+const updateEntityRecordTool =  require('../../tools/static/updateEntityRecordTool');
+const deleteEntityRecordTool =  require('../../tools/static/deleteEntityRecordTool');
+const invokeActionTool =  require('../../tools/static/invokeActionTool');
+const invokeFunctionTool =  require('../../tools/static/invokeFunctionTool');
 
 async function handleToolsList(req, res, body) {
 
@@ -26,7 +30,11 @@ async function handleToolsList(req, res, body) {
         discoverCapServicesTool.tool,
         getServiceMetadataTool.tool,
         queryEntityTool.tool,
-        createEntityRecordTool.tool
+        createEntityRecordTool.tool,
+        updateEntityRecordTool.tool,
+        deleteEntityRecordTool.tool,
+        invokeActionTool.tool,
+        invokeFunctionTool.tool
       ]
     }
   });

@@ -11,6 +11,15 @@ const queryEntityTool =
   require('../../tools/static/queryEntityTool');
 const createEntityRecordTool =
   require('../../tools/static/createEntityRecordTool');
+const updateEntityRecordTool =
+  require('../../tools/static/updateEntityRecordTool');
+const deleteEntityRecordTool =
+  require('../../tools/static/deleteEntityRecordTool');
+const invokeActionTool =
+  require('../../tools/static/invokeActionTool');
+
+const invokeFunctionTool =
+  require('../../tools/static/invokeFunctionTool');
 
 const toolRegistry = {
   hello_btp: helloTool.execute,
@@ -24,7 +33,16 @@ const toolRegistry = {
   query_entity_data:
   queryEntityTool.execute,
   create_entity_record:
-  createEntityRecordTool.execute
+  createEntityRecordTool.execute,
+  update_entity_record:
+  updateEntityRecordTool.execute,
+  delete_entity_record:
+  deleteEntityRecordTool.execute,
+  invoke_action:
+    invokeActionTool.execute,
+
+  invoke_function:
+    invokeFunctionTool.execute
 };
 
 async function handleToolsCall(req, res, body) {
